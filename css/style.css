@@ -52,14 +52,20 @@ h1 {
     align-items: center;
 }
 
+.score {
+    margin: 0.25em 0;
+}
+
 .card:last-child {
     margin-top: 0.5em;
 }
 
 .card {
     height: 50%;
-    width: 100%;
-    background-color: aqua;
+}
+
+.card img {
+    height: 100%;
 }
 
 button {
