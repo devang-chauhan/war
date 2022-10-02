@@ -26,10 +26,10 @@ button {
 
 main {
     height: 80%;
-    /* border: 5px dotted black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
 }
 
@@ -76,6 +76,7 @@ button {
     border-radius: 5px;
     padding: 0.5em 1em;
     margin: 0.5em 0;
+    width: 46%;
 }
 
 button:disabled {

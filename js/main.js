@@ -26,7 +26,7 @@ function updateStatus(cardVals) {
     if (card1Val === card2Val) {
         statusEl.textContent = "War!";
     } else {
-        statusEl.textContent = card1Val > card2Val ? "Card1 is higher" : "Card2 is higher";
+        statusEl.textContent = card1Val > card2Val ? "Computer wins!" : "You win!";
     }
 }
 
@@ -43,7 +43,7 @@ function updateRemaining(data) {
 }
 
 function finalStatus() {
-    statusEl.textContent = computerScore > myScore ? 'Computer Wins!' : 'I win!';
+    statusEl.textContent = computerScore > myScore ? 'Computer won the game!' : 'You win the game!';
 }
 
 function disableButtons() {
