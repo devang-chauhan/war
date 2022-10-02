@@ -43,7 +43,7 @@ function updateRemaining(data) {
 }
 
 function finalStatus() {
-    statusEl.textContent = computerScore > myScore ? 'Computer won the game!' : 'You win the game!';
+    statusEl.textContent = computerScore > myScore ? 'Computer won!' : 'You win!';
 }
 
 function disableButtons() {
@@ -62,22 +62,18 @@ function processCards(data) {
 }
 
 
-function fetchDeck() {
-    fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
-        .then(res => res.json())
-        .then(data => {
-            deckId = data.deck_id;
-            updateRemaining(data);
-        });
+async function fetchDeck() {
+    const res = await fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/");
+    const data = await res.json();
+    deckId = data.deck_id;
+    updateRemaining(data);
 }
 
-function fetchCards() {
+async function fetchCards() {
     if (deckId) {
-        fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
-        .then(res => res.json())
-            .then(data => {
-                processCards(data);
-            });
+        const res = await fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`);
+        const data = await res.json();
+        processCards(data);
     } else {
         alert("Get a new deck first!");
     }
