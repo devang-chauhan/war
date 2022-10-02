@@ -2,4 +2,4 @@
 
 Game of war created using vanilla JS and deckofcards API.
 
-![App](/images/deckofcards.png)
+![App](/images/war.png)
